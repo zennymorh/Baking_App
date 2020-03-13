@@ -4,44 +4,33 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class RecipeListViewModel : ViewModel() {
 
-    private val _response = MutableLiveData<String>()
+    private val _status  = MutableLiveData<String>()
     val response: LiveData<String>
-        get() = _response
+        get() = _status
+
+    private val _recipes = MutableLiveData<ArrayList<Recipe>>()
+    val recipes: LiveData<ArrayList<Recipe>>
+        get() = _recipes
 
     init {
-        Log.d("random tag", "got here")
         getRecipeList()
     }
 
-    private var viewModelJob = Job()
-    private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
-
     private fun getRecipeList() {
-
-        coroutineScope.launch {
-            var getRecipesDeferred = RecipeApi.retrofitService.getRecipes()
+        viewModelScope.launch {
+            var listRecipe = RecipeApi.retrofitService.getRecipes()
             try {
-                var listRecipe = getRecipesDeferred.await()
-                _response.value = "We have ${listRecipe.size} recipes to work with"
+                _recipes.value = listRecipe
             } catch (t: Throwable) {
-                _response.value = "Failure: " + t.message
+                _status.value = "Failure: " + t.message
 
             }
         }
-    }
 
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
     }
 }

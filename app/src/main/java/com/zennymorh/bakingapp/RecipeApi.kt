@@ -19,8 +19,8 @@ private val retrofit = Retrofit.Builder()
 
 interface RecipeApiService {
     @GET("topher/2017/May/59121517_baking/baking.json")
-    fun getRecipes():
-            Deferred<ArrayList<Recipe>>
+    suspend fun getRecipes():
+            ArrayList<Recipe>
 }
 
 object RecipeApi {
