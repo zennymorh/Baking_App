@@ -1,10 +1,11 @@
-package com.zennymorh.bakingapp
+package com.zennymorh.bakingapp.ui.recipe
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.zennymorh.bakingapp.model.Recipe
+import com.zennymorh.bakingapp.remote.RecipeApi
 import kotlinx.coroutines.launch
 
 class RecipeListViewModel : ViewModel() {
@@ -23,7 +24,7 @@ class RecipeListViewModel : ViewModel() {
 
     private fun getRecipeList() {
         viewModelScope.launch {
-            var listRecipe = RecipeApi.retrofitService.getRecipes()
+            val listRecipe = RecipeApi.retrofitService.getRecipes()
             try {
                 _recipes.value = listRecipe
             } catch (t: Throwable) {

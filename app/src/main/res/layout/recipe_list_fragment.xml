@@ -2,17 +2,18 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".RecipeListFragment">
+    tools:context=".ui.recipe.RecipeListFragment">
     
     <data>
         <variable
             name="viewModel"
-            type="com.zennymorh.bakingapp.RecipeListViewModel" />
+            type="com.zennymorh.bakingapp.ui.recipe.RecipeListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
 
 
         <androidx.recyclerview.widget.RecyclerView

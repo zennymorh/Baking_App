@@ -7,7 +7,16 @@
 
     <fragment
         android:id="@+id/recipeListFragment"
-        android:name="com.zennymorh.bakingapp.RecipeListFragment"
+        android:name="com.zennymorh.bakingapp.ui.recipe.RecipeListFragment"
         android:label="recipe_list_fragment"
-        tools:layout="@layout/recipe_list_fragment" />
+        tools:layout="@layout/recipe_list_fragment" >
+        <action
+            android:id="@+id/action_recipeListFragment_to_tabFragment"
+            app:destination="@id/tabFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tabFragment"
+        android:name="com.zennymorh.bakingapp.ui.tab.TabFragment"
+        android:label="fragment_tab"
+        tools:layout="@layout/fragment_tab" />
 </navigation>

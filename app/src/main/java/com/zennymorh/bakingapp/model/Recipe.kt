@@ -1,4 +1,4 @@
-package com.zennymorh.bakingapp
+package com.zennymorh.bakingapp.model
 
 data class Recipe(
     val id: Int,
@@ -20,5 +20,5 @@ data class Step(
     val shortDescription: String,
     val description: String,
     val videoURL: String,
-    val thumbnail: String
+    val thumbnailURL: String
 )
