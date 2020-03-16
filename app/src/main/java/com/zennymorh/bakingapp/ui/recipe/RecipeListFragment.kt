@@ -17,14 +17,16 @@ import com.zennymorh.bakingapp.model.Recipe
 
 class RecipeListFragment : Fragment() {
 
-    val recipeAdapter: RecipeListAdapter by lazy{
+    private val recipeAdapter: RecipeListAdapter by lazy{
         RecipeListAdapter(arrayListOf(), onRecipeItemSelected)
     }
 
-    val onRecipeItemSelected by lazy {
+    private val onRecipeItemSelected by lazy {
         object: RecipeItemClickListener {
             override fun invoke(recipe: Recipe) {
-                findNavController().navigate(R.id.action_recipeListFragment_to_tabFragment)
+                val action = RecipeListFragmentDirections.actionRecipeListFragmentToTabFragment(recipe)
+                findNavController().navigate(action)
+
             }
         }
     }
@@ -40,10 +42,10 @@ class RecipeListFragment : Fragment() {
 
         val binding = RecipeListFragmentBinding.inflate(inflater)
 
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        viewModel.recipes.observe(this, Observer { newList ->
+        viewModel.recipes.observe(viewLifecycleOwner, Observer { newList ->
             recipeAdapter.updateList(newList)
         })
 

@@ -18,5 +18,9 @@
         android:id="@+id/tabFragment"
         android:name="com.zennymorh.bakingapp.ui.tab.TabFragment"
         android:label="fragment_tab"
-        tools:layout="@layout/fragment_tab" />
+        tools:layout="@layout/fragment_tab">
+    <argument
+        android:name="recipeSelected"
+        app:argType="com.zennymorh.bakingapp.model.Recipe" />
+    </fragment>
 </navigation>

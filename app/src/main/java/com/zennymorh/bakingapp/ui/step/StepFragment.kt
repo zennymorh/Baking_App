@@ -11,12 +11,6 @@ import com.zennymorh.bakingapp.R
 
 class StepFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = StepFragment()
-    }
-
-    private lateinit var viewModel: StepViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,8 +20,7 @@ class StepFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(StepViewModel::class.java)
-        // TODO: Use the ViewModel
+
     }
 
 }
