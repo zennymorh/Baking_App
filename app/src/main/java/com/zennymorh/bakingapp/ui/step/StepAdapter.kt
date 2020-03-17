@@ -1,14 +1,17 @@
 package com.zennymorh.bakingapp.ui.step
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.zennymorh.bakingapp.R
 import com.zennymorh.bakingapp.model.Step
 
-class StepAdapter(private var stepList: ArrayList<Step>):
-RecyclerView.Adapter<StepAdapter.StepViewHolder>() {
+typealias StepItemClickListener = (Step) -> Unit
+
+class StepAdapter(private var stepList: ArrayList<Step>, var listener: StepItemClickListener):
+    RecyclerView.Adapter<StepAdapter.StepViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StepViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return StepViewHolder(inflater, parent)
@@ -29,13 +32,21 @@ RecyclerView.Adapter<StepAdapter.StepViewHolder>() {
 
     inner class StepViewHolder(inflater: LayoutInflater, parent: ViewGroup):
         RecyclerView.ViewHolder(inflater
-            .inflate(R.layout.step_item, parent, false)) {
+            .inflate(R.layout.step_item, parent, false)), View.OnClickListener {
+
         private var stepName: TextView? = null
         private var index: TextView? = null
 
         init {
             stepName = itemView.findViewById(R.id.stepName)
             index = itemView.findViewById(R.id.index)
+            itemView.setOnClickListener{
+                val step = stepList[adapterPosition]
+                listener.invoke(step)
+            }
+        }
+
+        override fun onClick(v: View?) {
         }
 
         fun bind(step: Step) {

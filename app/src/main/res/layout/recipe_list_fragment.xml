@@ -15,7 +15,6 @@
         android:layout_height="match_parent"
         android:background="@android:color/white">
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recipeList"
             android:layout_width="0dp"
