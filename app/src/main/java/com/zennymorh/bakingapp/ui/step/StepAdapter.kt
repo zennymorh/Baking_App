@@ -40,13 +40,12 @@ class StepAdapter(private var stepList: ArrayList<Step>, var listener: StepItemC
         init {
             stepName = itemView.findViewById(R.id.stepName)
             index = itemView.findViewById(R.id.index)
-            itemView.setOnClickListener{
-                val step = stepList[adapterPosition]
-                listener.invoke(step)
-            }
+            itemView.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {
+            val step = stepList[adapterPosition]
+            listener.invoke(step)
         }
 
         fun bind(step: Step) {
