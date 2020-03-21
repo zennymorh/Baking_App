@@ -8,8 +8,7 @@
     <fragment
         android:id="@+id/recipeListFragment"
         android:name="com.zennymorh.bakingapp.ui.recipe.RecipeListFragment"
-        android:label="recipe_list_fragment"
-        tools:layout="@layout/recipe_list_fragment" >
+        tools:layout="@layout/recipe_list_fragment">
         <action
             android:id="@+id/action_recipeListFragment_to_tabFragment"
             app:destination="@id/tabFragment" />
@@ -18,11 +17,10 @@
     <fragment
         android:id="@+id/tabFragment"
         android:name="com.zennymorh.bakingapp.ui.tab.TabFragment"
-        android:label="fragment_tab"
         tools:layout="@layout/fragment_tab">
-    <argument
-        android:name="recipeSelected"
-        app:argType="com.zennymorh.bakingapp.model.Recipe" />
+        <argument
+            android:name="recipeSelected"
+            app:argType="com.zennymorh.bakingapp.model.Recipe" />
         <action
             android:id="@+id/action_tabFragment_to_stepDetailFragment"
             app:destination="@id/stepDetailFragment" />
@@ -31,10 +29,9 @@
     <fragment
         android:id="@+id/stepDetailFragment"
         android:name="com.zennymorh.bakingapp.ui.step.StepDetailFragment"
-        android:label="fragment_step_detail"
         tools:layout="@layout/fragment_step_detail">
-    <argument
-        android:name="stepSelected"
-        app:argType="com.zennymorh.bakingapp.model.Step" />
+        <argument
+            android:name="stepSelected"
+            app:argType="com.zennymorh.bakingapp.model.Step" />
     </fragment>
 </navigation>

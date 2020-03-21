@@ -80,4 +80,7 @@ dependencies {
     //Exoplayer
     implementation 'com.google.android.exoplayer:exoplayer:2.11.1'
 
+    //CardViews
+    implementation 'androidx.cardview:cardview:1.0.0'
+
 }

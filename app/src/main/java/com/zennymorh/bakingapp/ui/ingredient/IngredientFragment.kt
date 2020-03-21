@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.zennymorh.bakingapp.databinding.IngredientFragmentBinding
 import com.zennymorh.bakingapp.model.Ingredient
+import com.zennymorh.bakingapp.ui.main.MainActivity
 
 
 class IngredientFragment : Fragment() {
@@ -26,7 +27,16 @@ class IngredientFragment : Fragment() {
 
         binding.ingredientList.adapter = ingredientAdapter
 
+        (requireActivity() as MainActivity).title = "Ingredient"
+
+
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as MainActivity).title = "Ingredient"
+
     }
 
 

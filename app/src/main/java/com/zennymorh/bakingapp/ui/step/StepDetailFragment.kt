@@ -23,6 +23,7 @@ import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 import com.zennymorh.bakingapp.R
+import com.zennymorh.bakingapp.ui.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_step_detail.*
 
 /**
@@ -48,6 +49,7 @@ class StepDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        (requireActivity() as MainActivity).title = "Procedure"
 
         return inflater.inflate(R.layout.fragment_step_detail, container, false)
     }
@@ -87,6 +89,12 @@ class StepDetailFragment : Fragment() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putLong("Playback Position",simpleExoPlayer.currentPosition)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as MainActivity).title = "Procedure"
+
     }
 
     override fun onStop() {
