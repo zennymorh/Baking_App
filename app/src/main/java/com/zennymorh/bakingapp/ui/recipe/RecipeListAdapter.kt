@@ -1,17 +1,18 @@
 package com.zennymorh.bakingapp.ui.recipe
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.zennymorh.bakingapp.R
 import com.zennymorh.bakingapp.model.Recipe
 
 typealias RecipeItemClickListener = (Recipe) -> Unit
 
-class RecipeListAdapter(private var recipeList: ArrayList<Recipe>, var listener: RecipeItemClickListener):
+class RecipeListAdapter(
+    private var recipeList: ArrayList<Recipe>, var listener: RecipeItemClickListener):
     RecyclerView.Adapter<RecipeListAdapter.RecipeViewHolder>() {
 
 
@@ -33,7 +34,8 @@ class RecipeListAdapter(private var recipeList: ArrayList<Recipe>, var listener:
     }
 
     inner class RecipeViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-        RecyclerView.ViewHolder(inflater.inflate(R.layout.list_view_item, parent, false)),
+        RecyclerView.ViewHolder(inflater.inflate(R.layout.list_view_item, parent,
+            false)),
         View.OnClickListener {
 
         private var recipeName: TextView? = null
@@ -46,11 +48,12 @@ class RecipeListAdapter(private var recipeList: ArrayList<Recipe>, var listener:
         }
 
         override fun onClick(v: View?) {
-            var recipe = recipeList[adapterPosition]
+            val recipe = recipeList[adapterPosition]
             listener.invoke(recipe)
 
         }
 
+        @SuppressLint("SetTextI18n")
         fun bind(recipe: Recipe) {
             recipeName?.text = recipe.name
             recipeServing?.text = "Servings: " + recipe.servings.toString()

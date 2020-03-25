@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         // Set up the ActionBar to stay in sync with the NavController
         NavigationUI.setupActionBarWithNavController(this, navController)
-
         appBarConfiguration = AppBarConfiguration.Builder(navController.graph)
             .build()
 

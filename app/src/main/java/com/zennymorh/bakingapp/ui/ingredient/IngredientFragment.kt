@@ -16,8 +16,8 @@ class IngredientFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        val ingredients = arguments?.getParcelableArrayList<Ingredient>("Ingredients") as ArrayList<Ingredient>
+        val ingredients = arguments?.
+            getParcelableArrayList<Ingredient>("Ingredients") as ArrayList<Ingredient>
         val ingredientAdapter = IngredientAdapter(ingredients)
 
         ingredientAdapter.updateIngredients(ingredients)
@@ -26,9 +26,8 @@ class IngredientFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.ingredientList.adapter = ingredientAdapter
-
+        // Changing the title of the fragment
         (requireActivity() as MainActivity).title = "Ingredient"
-
 
         return binding.root
     }
@@ -36,8 +35,5 @@ class IngredientFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         (requireActivity() as MainActivity).title = "Ingredient"
-
     }
-
-
 }

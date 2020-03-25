@@ -6,23 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.zennymorh.bakingapp.R
 import com.zennymorh.bakingapp.databinding.StepFragmentBinding
 import com.zennymorh.bakingapp.model.Recipe
 import com.zennymorh.bakingapp.model.Step
 import com.zennymorh.bakingapp.ui.main.MainActivity
 import com.zennymorh.bakingapp.ui.tab.TabFragmentDirections
-import kotlinx.android.synthetic.main.list_view_item.*
-import kotlinx.android.synthetic.main.step_item.*
 
 class StepFragment : Fragment() {
+
     lateinit var recipe: Recipe
 
-    val stepAdapter: StepAdapter by lazy {
+    private val stepAdapter: StepAdapter by lazy {
         StepAdapter(arrayListOf(), onStepItemSelected)
     }
 
@@ -47,7 +43,8 @@ class StepFragment : Fragment() {
         val steps = arguments?.getParcelableArrayList<Step>("Steps") as ArrayList<Step>
 
         binding.stepList.adapter = stepAdapter
-        binding.stepList.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+        binding.stepList.addItemDecoration(DividerItemDecoration(context,
+            DividerItemDecoration.VERTICAL))
 
         stepAdapter.updateSteps(steps)
 
@@ -59,7 +56,5 @@ class StepFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         (requireActivity() as MainActivity).title = "Step"
-
     }
-
 }

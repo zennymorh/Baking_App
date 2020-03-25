@@ -1,9 +1,9 @@
 package com.zennymorh.bakingapp.model
 
-import android.os.Parcel
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
+//My data classes. Make sure the variable names are corresponding to the ones from the api.
 @Parcelize
 data class Recipe(
     val id: Int,

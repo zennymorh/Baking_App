@@ -8,8 +8,6 @@ import retrofit2.http.GET
 
 private const val BASE_URL = "https://d17h27t6h515a5.cloudfront.net/"
 
-
-
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
     .addCallAdapterFactory(CoroutineCallAdapterFactory())

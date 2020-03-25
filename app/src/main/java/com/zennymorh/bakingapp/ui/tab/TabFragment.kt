@@ -8,16 +8,14 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.tabs.TabLayoutMediator
 import com.zennymorh.bakingapp.R
-import com.zennymorh.bakingapp.model.Recipe
 import com.zennymorh.bakingapp.ui.ingredient.IngredientFragment
 import com.zennymorh.bakingapp.ui.step.StepFragment
 import kotlinx.android.synthetic.main.fragment_tab.*
-import kotlinx.android.synthetic.main.list_view_item.*
 
 class TabFragment : Fragment() {
 
     private lateinit var tabAdapter: TabAdapter
-    val args : TabFragmentArgs by navArgs()
+    private val args : TabFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +40,7 @@ class TabFragment : Fragment() {
 
     private fun createFragments(): ArrayList<Fragment> {
         val fragments: ArrayList<Fragment> = arrayListOf()
+
 
         fragments.add(StepFragment().apply {
             arguments = Bundle().apply {

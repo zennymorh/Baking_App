@@ -14,7 +14,6 @@ import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
 import com.google.android.exoplayer2.source.ExtractorMediaSource
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
-import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
@@ -26,6 +25,7 @@ import kotlinx.android.synthetic.main.fragment_step_detail.*
  * A simple [Fragment] subclass.
  */
 class StepDetailFragment : Fragment() {
+
     private var simpleExoPlayer: SimpleExoPlayer? = null
     private val bandwidthMeter by lazy {
         DefaultBandwidthMeter()
@@ -36,15 +36,15 @@ class StepDetailFragment : Fragment() {
     private val mainHandler = Handler()
 
     private val args: StepDetailFragmentArgs by navArgs()
-    var videoUrl = ""
+
+    private var videoUrl = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        (requireActivity() as MainActivity).title = "Procedure"
 
+        (requireActivity() as MainActivity).title = "Procedure"
         return inflater.inflate(R.layout.fragment_step_detail, container, false)
     }
 
@@ -60,9 +60,10 @@ class StepDetailFragment : Fragment() {
     }
 
     private fun prepareExoPlayer() {
-
+        // Creating your exoPlayer
         simpleExoPlayer = ExoPlayerFactory.newSimpleInstance(activity!!,
             DefaultTrackSelector(adaptiveTrackSelectionFactory))
+        // Setting the player to your id
         recipe_exo_player.player = simpleExoPlayer
 
         val dataSourceFactory = DefaultDataSourceFactory(
@@ -74,16 +75,13 @@ class StepDetailFragment : Fragment() {
             videoUrl.toUri(),
             dataSourceFactory, extractorsFactory, mainHandler, null
         )
-
         simpleExoPlayer?.prepare(videoSource)
-
         simpleExoPlayer?.playWhenReady = true
     }
 
     override fun onResume() {
         super.onResume()
         (requireActivity() as MainActivity).title = "Procedure"
-
     }
 
     override fun onStop() {

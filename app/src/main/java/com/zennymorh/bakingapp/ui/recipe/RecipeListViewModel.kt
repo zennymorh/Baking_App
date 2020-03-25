@@ -27,7 +27,6 @@ class RecipeListViewModel : ViewModel() {
     fun getRecipeList() {
         _status.value = RecipeApiStatus.LOADING
         viewModelScope.launch {
-
             try {
                 val listRecipe = RecipeApi.retrofitService.getRecipes()
                 _recipes.value = listRecipe
@@ -38,6 +37,5 @@ class RecipeListViewModel : ViewModel() {
 
             }
         }
-
     }
 }

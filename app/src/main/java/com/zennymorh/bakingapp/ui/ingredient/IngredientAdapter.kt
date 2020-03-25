@@ -9,6 +9,7 @@ import com.zennymorh.bakingapp.model.Ingredient
 
 class IngredientAdapter(private var ingredientList: ArrayList<Ingredient>):
     RecyclerView.Adapter<IngredientAdapter.IngredientViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return IngredientViewHolder(inflater, parent)
@@ -25,6 +26,8 @@ class IngredientAdapter(private var ingredientList: ArrayList<Ingredient>):
         ingredientList = list
         notifyDataSetChanged()
     }
+
+    //ViewHolder for the recycler view adapter
 
     inner class IngredientViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
             RecyclerView.ViewHolder(inflater
