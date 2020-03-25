@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.zennymorh.bakingapp.R
 import com.zennymorh.bakingapp.databinding.StepFragmentBinding
 import com.zennymorh.bakingapp.model.Recipe
@@ -46,6 +47,7 @@ class StepFragment : Fragment() {
         val steps = arguments?.getParcelableArrayList<Step>("Steps") as ArrayList<Step>
 
         binding.stepList.adapter = stepAdapter
+        binding.stepList.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
         stepAdapter.updateSteps(steps)
 

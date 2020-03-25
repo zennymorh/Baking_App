@@ -11,11 +11,13 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.zennymorh.bakingapp.R
 import com.zennymorh.bakingapp.databinding.RecipeListFragmentBinding
 import com.zennymorh.bakingapp.model.Recipe
 import com.zennymorh.bakingapp.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.recipe_list_fragment.*
 
 
 class RecipeListFragment : Fragment() {
@@ -50,6 +52,27 @@ class RecipeListFragment : Fragment() {
 
         viewModel.recipes.observe(viewLifecycleOwner, Observer { newList ->
             recipeAdapter.updateList(newList)
+        })
+
+        viewModel.status.observe(viewLifecycleOwner, Observer {newState ->
+            when (newState){
+                RecipeApiStatus.LOADING -> {
+                    binding.progress.visibility = View.VISIBLE
+                }
+                RecipeApiStatus.ERROR -> {
+                    binding.progress.visibility = View.GONE
+                    val snackbar = Snackbar.make(
+                        binding.constraintLayout,
+                        "Error, please try again",
+                        Snackbar.LENGTH_INDEFINITE
+                    )
+                    snackbar.setAction("Retry") { viewModel.getRecipeList() }
+                    snackbar.show()
+                }
+                RecipeApiStatus.DONE -> {
+                    binding.progress.visibility = View.GONE
+                }
+            }
         })
 
         binding.recipeList.apply {

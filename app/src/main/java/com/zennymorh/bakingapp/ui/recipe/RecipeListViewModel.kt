@@ -8,10 +8,12 @@ import com.zennymorh.bakingapp.model.Recipe
 import com.zennymorh.bakingapp.remote.RecipeApi
 import kotlinx.coroutines.launch
 
+enum class RecipeApiStatus{LOADING, ERROR, DONE}
+
 class RecipeListViewModel : ViewModel() {
 
-    private val _status  = MutableLiveData<String>()
-    val response: LiveData<String>
+    private val _status  = MutableLiveData<RecipeApiStatus>()
+    val status: LiveData<RecipeApiStatus>
         get() = _status
 
     private val _recipes = MutableLiveData<ArrayList<Recipe>>()
@@ -22,13 +24,17 @@ class RecipeListViewModel : ViewModel() {
         getRecipeList()
     }
 
-    private fun getRecipeList() {
+    fun getRecipeList() {
+        _status.value = RecipeApiStatus.LOADING
         viewModelScope.launch {
-            val listRecipe = RecipeApi.retrofitService.getRecipes()
+
             try {
+                val listRecipe = RecipeApi.retrofitService.getRecipes()
                 _recipes.value = listRecipe
+                _status.value = RecipeApiStatus.DONE
+
             } catch (t: Throwable) {
-                _status.value = "Failure: " + t.message
+                _status.value = RecipeApiStatus.ERROR
 
             }
         }

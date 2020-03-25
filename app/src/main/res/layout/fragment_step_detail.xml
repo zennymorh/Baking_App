@@ -6,29 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.step.StepDetailFragment"
-    android:background="@android:color/black">
+    >
 
     <com.google.android.exoplayer2.ui.PlayerView
         android:id="@+id/recipe_exo_player"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/progressBar"
-        app:shutter_background_color="@android:color/black">
-    </com.google.android.exoplayer2.ui.PlayerView>
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/description"
-        android:visibility="invisible"/>
+        app:shutter_background_color="@android:color/black"/>
 
     <TextView
         android:id="@+id/description"
@@ -38,11 +28,12 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="32dp"
-        android:text=""
-        android:textColor="@android:color/white"
+        android:layout_marginBottom="200dp"
+        android:justificationMode="inter_word"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="long description of the step. He told his folks about it and they told him not to accept it cause his GPA is not high enough.. That if he wants to work while in school, he should work on improving his GPA" />
 

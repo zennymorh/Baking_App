@@ -1,7 +1,5 @@
 package com.zennymorh.bakingapp.ui.step
 
-
-import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -10,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.navigation.fragment.navArgs
-import com.google.android.exoplayer2.DefaultLoadControl
-import com.google.android.exoplayer2.DefaultRenderersFactory
 import com.google.android.exoplayer2.ExoPlayerFactory
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
@@ -30,18 +26,16 @@ import kotlinx.android.synthetic.main.fragment_step_detail.*
  * A simple [Fragment] subclass.
  */
 class StepDetailFragment : Fragment() {
-    private lateinit var playerView: PlayerView
-    private lateinit var simpleExoPlayer: SimpleExoPlayer
-    private val playbackPosition = 0L
+    private var simpleExoPlayer: SimpleExoPlayer? = null
     private val bandwidthMeter by lazy {
         DefaultBandwidthMeter()
     }
     private val adaptiveTrackSelectionFactory by lazy {
         AdaptiveTrackSelection.Factory(bandwidthMeter)
     }
-    val mainHandler = Handler()
+    private val mainHandler = Handler()
 
-    val args: StepDetailFragmentArgs by navArgs()
+    private val args: StepDetailFragmentArgs by navArgs()
     var videoUrl = ""
 
     override fun onCreateView(
@@ -81,14 +75,9 @@ class StepDetailFragment : Fragment() {
             dataSourceFactory, extractorsFactory, mainHandler, null
         )
 
-        simpleExoPlayer.prepare(videoSource)
+        simpleExoPlayer?.prepare(videoSource)
 
-        simpleExoPlayer.playWhenReady = true
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putLong("Playback Position",simpleExoPlayer.currentPosition)
+        simpleExoPlayer?.playWhenReady = true
     }
 
     override fun onResume() {
@@ -99,7 +88,7 @@ class StepDetailFragment : Fragment() {
 
     override fun onStop() {
         super.onStop()
-        simpleExoPlayer.stop()
-        simpleExoPlayer.release()
+            simpleExoPlayer?.stop()
+            simpleExoPlayer?.release()
     }
 }
