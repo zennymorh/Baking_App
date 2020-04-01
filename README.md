@@ -1,6 +1,9 @@
 # Baking_App
 A simple baking application that displays a variety of recipes in a cardview
 
+### Overview
+Creating an android app that will allow a user to select a recipe and see video-guided steps for how to complete it.
+
 ### Description
 The first image shows the fetched recipes in a cardview. The second image shows the list of steps of the clicked recipe.
 
@@ -9,9 +12,6 @@ The first image shows the fetched recipes in a cardview. The second image shows 
 The first image here shows the ingredients of a particular recipe. The second image shows a further description of the step which includes a video for some steps.
 
 <img src=https://raw.githubusercontent.com/zennymorh/Baking_App/master/images/step_description.png alt="Step Description" width=300 height=600/> <img src=https://raw.githubusercontent.com/zennymorh/Baking_App/master/images/ingredients.png alt="Ingredients" width=300 height=600/>
-
-### Overview
-Creating an android app that will allow a user to select a recipe and see video-guided steps for how to complete it.
 
 ### What I learnt while working on this project
 How To:
