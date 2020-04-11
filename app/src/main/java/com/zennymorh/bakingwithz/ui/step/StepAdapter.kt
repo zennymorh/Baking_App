@@ -1,12 +1,12 @@
-package com.zennymorh.bakingapp.ui.step
+package com.zennymorh.bakingwithz.ui.step
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.zennymorh.bakingapp.R
-import com.zennymorh.bakingapp.model.Step
+import com.zennymorh.bakingwithz.R
+import com.zennymorh.bakingwithz.model.Step
 
 typealias StepItemClickListener = (Step) -> Unit
 

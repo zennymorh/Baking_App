@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.zennymorh.bakingapp.ui.recipe.RecipeListViewModel" />
+            type="com.zennymorh.bakingwithz.ui.recipe.RecipeListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

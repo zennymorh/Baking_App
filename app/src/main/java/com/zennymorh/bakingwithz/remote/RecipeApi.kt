@@ -1,7 +1,7 @@
-package com.zennymorh.bakingapp.remote
+package com.zennymorh.bakingwithz.remote
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.zennymorh.bakingapp.model.Recipe
+import com.zennymorh.bakingwithz.model.Recipe
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET

@@ -1,4 +1,4 @@
-package com.zennymorh.bakingapp.ui.recipe
+package com.zennymorh.bakingwithz.ui.recipe
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
-import com.zennymorh.bakingapp.databinding.RecipeListFragmentBinding
-import com.zennymorh.bakingapp.model.Recipe
-import com.zennymorh.bakingapp.ui.main.MainActivity
+import com.zennymorh.bakingwithz.databinding.RecipeListFragmentBinding
+import com.zennymorh.bakingwithz.model.Recipe
+import com.zennymorh.bakingwithz.ui.main.MainActivity
 
 class RecipeListFragment : Fragment() {
 

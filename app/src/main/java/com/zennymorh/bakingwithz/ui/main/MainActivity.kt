@@ -1,16 +1,13 @@
-package com.zennymorh.bakingapp.ui.main
+package com.zennymorh.bakingwithz.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
-import com.zennymorh.bakingapp.R
-import com.zennymorh.bakingapp.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
+import com.zennymorh.bakingwithz.R
+import com.zennymorh.bakingwithz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

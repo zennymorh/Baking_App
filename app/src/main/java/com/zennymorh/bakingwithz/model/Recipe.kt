@@ -1,4 +1,4 @@
-package com.zennymorh.bakingapp.model
+package com.zennymorh.bakingwithz.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

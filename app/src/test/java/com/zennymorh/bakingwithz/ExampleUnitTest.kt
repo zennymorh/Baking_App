@@ -1,4 +1,4 @@
-package com.zennymorh.bakingapp
+package com.zennymorh.bakingwithz
 
 import org.junit.Test
 

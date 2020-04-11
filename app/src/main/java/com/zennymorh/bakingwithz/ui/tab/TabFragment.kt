@@ -1,4 +1,4 @@
-package com.zennymorh.bakingapp.ui.tab
+package com.zennymorh.bakingwithz.ui.tab
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.tabs.TabLayoutMediator
-import com.zennymorh.bakingapp.R
-import com.zennymorh.bakingapp.ui.ingredient.IngredientFragment
-import com.zennymorh.bakingapp.ui.step.StepFragment
+import com.zennymorh.bakingwithz.R
+import com.zennymorh.bakingwithz.ui.ingredient.IngredientFragment
+import com.zennymorh.bakingwithz.ui.step.StepFragment
 import kotlinx.android.synthetic.main.fragment_tab.*
 
 class TabFragment : Fragment() {

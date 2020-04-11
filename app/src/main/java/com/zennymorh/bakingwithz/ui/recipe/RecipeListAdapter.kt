@@ -1,4 +1,4 @@
-package com.zennymorh.bakingapp.ui.recipe
+package com.zennymorh.bakingwithz.ui.recipe
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.zennymorh.bakingapp.R
-import com.zennymorh.bakingapp.model.Recipe
+import com.zennymorh.bakingwithz.R
+import com.zennymorh.bakingwithz.model.Recipe
 
 typealias RecipeItemClickListener = (Recipe) -> Unit
 

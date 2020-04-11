@@ -1,11 +1,11 @@
-package com.zennymorh.bakingapp.ui.ingredient
+package com.zennymorh.bakingwithz.ui.ingredient
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.zennymorh.bakingapp.R
-import com.zennymorh.bakingapp.model.Ingredient
+import com.zennymorh.bakingwithz.R
+import com.zennymorh.bakingwithz.model.Ingredient
 
 class IngredientAdapter(private var ingredientList: ArrayList<Ingredient>):
     RecyclerView.Adapter<IngredientAdapter.IngredientViewHolder>() {

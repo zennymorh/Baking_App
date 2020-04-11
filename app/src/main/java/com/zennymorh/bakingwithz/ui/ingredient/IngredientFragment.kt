@@ -1,13 +1,13 @@
-package com.zennymorh.bakingapp.ui.ingredient
+package com.zennymorh.bakingwithz.ui.ingredient
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.zennymorh.bakingapp.databinding.IngredientFragmentBinding
-import com.zennymorh.bakingapp.model.Ingredient
-import com.zennymorh.bakingapp.ui.main.MainActivity
+import com.zennymorh.bakingwithz.databinding.IngredientFragmentBinding
+import com.zennymorh.bakingwithz.model.Ingredient
+import com.zennymorh.bakingwithz.ui.main.MainActivity
 
 
 class IngredientFragment : Fragment() {

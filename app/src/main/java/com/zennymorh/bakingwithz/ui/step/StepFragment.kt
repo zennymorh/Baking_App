@@ -1,4 +1,4 @@
-package com.zennymorh.bakingapp.ui.step
+package com.zennymorh.bakingwithz.ui.step
 
 import android.os.Bundle
 import android.util.Log
@@ -8,11 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.zennymorh.bakingapp.databinding.StepFragmentBinding
-import com.zennymorh.bakingapp.model.Recipe
-import com.zennymorh.bakingapp.model.Step
-import com.zennymorh.bakingapp.ui.main.MainActivity
-import com.zennymorh.bakingapp.ui.tab.TabFragmentDirections
+import com.zennymorh.bakingwithz.databinding.StepFragmentBinding
+import com.zennymorh.bakingwithz.model.Recipe
+import com.zennymorh.bakingwithz.model.Step
+import com.zennymorh.bakingwithz.ui.main.MainActivity
+import com.zennymorh.bakingwithz.ui.tab.TabFragmentDirections
 
 class StepFragment : Fragment() {
 

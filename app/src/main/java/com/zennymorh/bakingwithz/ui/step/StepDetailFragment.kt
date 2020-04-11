@@ -1,4 +1,4 @@
-package com.zennymorh.bakingapp.ui.step
+package com.zennymorh.bakingwithz.ui.step
 
 import android.os.Bundle
 import android.os.Handler
@@ -17,8 +17,8 @@ import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
-import com.zennymorh.bakingapp.R
-import com.zennymorh.bakingapp.ui.main.MainActivity
+import com.zennymorh.bakingwithz.R
+import com.zennymorh.bakingwithz.ui.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_step_detail.*
 
 /**

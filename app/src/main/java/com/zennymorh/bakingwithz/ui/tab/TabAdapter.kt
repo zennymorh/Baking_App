@@ -1,4 +1,4 @@
-package com.zennymorh.bakingapp.ui.tab
+package com.zennymorh.bakingwithz.ui.tab
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

@@ -1,11 +1,11 @@
-package com.zennymorh.bakingapp.ui.recipe
+package com.zennymorh.bakingwithz.ui.recipe
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.zennymorh.bakingapp.model.Recipe
-import com.zennymorh.bakingapp.remote.RecipeApi
+import com.zennymorh.bakingwithz.model.Recipe
+import com.zennymorh.bakingwithz.remote.RecipeApi
 import kotlinx.coroutines.launch
 
 enum class RecipeApiStatus{LOADING, ERROR, DONE}
